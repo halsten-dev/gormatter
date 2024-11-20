@@ -81,6 +81,47 @@ func Underline(foregroundColor int, backgroundColor int, text string) string {
 	return fmt.Sprintf("%s%s%s", style, text, styleReset)
 }
 
+func BoldItalic(foregroundColor int, backgroundColor int, text string) string {
+	style := styleStart
+	style += attr(styleBold, true)
+	style += attr(styleItalic, true)
+	style += colors(foregroundColor, backgroundColor)
+	style += styleEnd
+
+	return fmt.Sprintf("%s%s%s", style, text, styleReset)
+}
+
+func BoldUnderline(foregroundColor int, backgroundColor int, text string) string {
+	style := styleStart
+	style += attr(styleBold, true)
+	style += attr(styleUnderline, true)
+	style += colors(foregroundColor, backgroundColor)
+	style += styleEnd
+
+	return fmt.Sprintf("%s%s%s", style, text, styleReset)
+}
+
+func BoldItalicUnderline(foregroundColor int, backgroundColor int, text string) string {
+	style := styleStart
+	style += attr(styleBold, true)
+	style += attr(styleItalic, true)
+	style += attr(styleUnderline, true)
+	style += colors(foregroundColor, backgroundColor)
+	style += styleEnd
+
+	return fmt.Sprintf("%s%s%s", style, text, styleReset)
+}
+
+func ItalicUnderline(foregroundColor int, backgroundColor int, text string) string {
+	style := styleStart
+	style += attr(styleItalic, true)
+	style += attr(styleUnderline, true)
+	style += colors(foregroundColor, backgroundColor)
+	style += styleEnd
+
+	return fmt.Sprintf("%s%s%s", style, text, styleReset)
+}
+
 func colors(foregroundColor, backgroundColor int) string {
 	var style string
 
