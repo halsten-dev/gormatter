@@ -9,6 +9,7 @@ Import the package :
 ```go
 import (
 	gmt "github.com/halsten-dev/gormatter"
+)
 ```
 
 Then there is choice between multiple function :
